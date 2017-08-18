@@ -3381,6 +3381,7 @@ class DataHandler
             return null;
         }
         if ($this->isRecordCopied($table, $uid)) {
+            unset($overrideValues['l10n_source']);
             if (!empty($overrideValues)) {
                 $this->log($table, $uid, 1, 0, 1, 'Repeated attempt to copy record "%s:%s" with override values', -1, [$table, $uid]);
             }
